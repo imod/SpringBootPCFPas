@@ -1,0 +1,13 @@
+---
+applications:
+- name: springboot-jpa-bootstrap-employee
+  memory: 512M
+  instances: 1
+  random-route: true
+  timeout: 180
+  path: ./target/springbootpcfpas-0.0.1-SNAPSHOT.jar
+  services:
+    - apples-mysql
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urando
+    SPRING_PROFILES_ACTIVE: cloud
