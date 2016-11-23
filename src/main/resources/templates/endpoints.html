@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot JPA Bootstrap Employees Page</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        #map{ width:700px; height: 400px; }
+
+        .space-left {
+            margin-left: 20px;
+        }
+    </style>
+
+    <link rel="stylesheet" th:href="@{themes/bootstrap-darkly.css}" media="screen" />
+    <link rel="stylesheet" th:href="@{themes/custom-darkly.min.css}" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
+    <link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
+
+</head>
+<body>
+<div class="navbar navbar-default">
+    <div class="container" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="navbar-brand" href="http://run.pivotal.io/">
+                        <img src="images/spring-new-icon.png"
+                             th:src="@{images/spring-new-icon.png}"
+                             alt="Pivotal" width="28" height="28"
+                             border="0"/>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/endpoints}">Endpoints</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        [Service: <span th:text="${dbservice}"></span> - App Index: <span th:text="${appIndex}"></span>]
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/}">
+                        <img src="images/b_home.png"
+                             th:src="@{images/b_home.png}"
+                             alt="Home" width="28" height="28"
+                             border="0"/>
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="space-left bs-example">
+    <div class="page-header">
+        <h1>Spring Boot JPA Bootstrap <small>Endpoints</small></h1>
+    </div>
+</div>
+
+<div>
+    <blockquote>
+        <p>
+            Endpoints for REST and ACTUATOR as per below
+        </p>
+        <small>by <cite>Pas Apicella</cite></small>
+    </blockquote>
+</div>
+
+<div>
+    <h4> REST </h4>
+
+    <h4> ACTUATOR </h4>
+
+    <ul>
+        <li><a href="/env" target="_new">Environment</a> </li>
+    </ul>
+
+</div>
+
+<div class="clearfix">
+</div>
+
+<div th:include="footer :: copy"></div>
+
+</body>
+</html>

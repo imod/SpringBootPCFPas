@@ -18,17 +18,15 @@
     <link rel="stylesheet" th:href="@{themes/bootstrap-darkly.css}" media="screen" />
     <link rel="stylesheet" th:href="@{themes/custom-darkly.min.css}" />
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
 
     <link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
@@ -59,13 +57,19 @@
                                      border="0"/>
                             </a>
                         </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a th:href="@{/endpoints}">Endpoints</a></li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="#">
                                 [Service: <span th:text="${dbservice}"></span> - App Index: <span th:text="${appIndex}"></span>]
                             </a>
                         </li>
                         <li>
-                            <a th:href="@{/home}">
+                            <a th:href="@{/}">
                                 <img src="images/b_home.png"
                                      th:src="@{images/b_home.png}"
                                      alt="Home" width="28" height="28"
