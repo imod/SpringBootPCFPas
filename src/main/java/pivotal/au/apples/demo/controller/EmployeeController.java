@@ -26,6 +26,8 @@ public class EmployeeController
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homePage(Model model) throws Exception
     {
+        logger.info("Invoking Employee Controller to get all employees...");
+
         model.addAttribute("employees", employeeRepository.findAll());
         model.addAttribute("appIndex", Utils.applicationIndex());
         model.addAttribute("dbservice", Utils.getDBService());
