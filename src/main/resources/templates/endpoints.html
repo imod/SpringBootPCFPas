@@ -60,7 +60,15 @@
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/endpoints}">Endpoints</a></li>
+                        <li>
+                            <a th:href="@{/endpoints}">
+                                <img src="images/b_props.png"
+                                     th:src="@{images/b_props.png}"
+                                     alt="Endpoints"
+                                     border="0"/>
+                                Endpoints
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -100,11 +108,21 @@
 
 <div>
     <h4> REST </h4>
+    <ul>
+        <li><a href="/emps" target="_new">View All Employees</a> </li>
+        <li><a href="/emp/1" target="_new">View Employee with ID 2 </a> </li>
+        <li><a href="/empwithjob/CLERK" target="_new">View Employees with JOB = CLERK</a> </li>
+    </ul>
 
     <h4> ACTUATOR </h4>
 
     <ul>
-        <li><a href="/env" target="_new">Environment</a> </li>
+        <li><a href="/env" target="_new">Environment for shell/JVM</a> </li>
+        <li><a href="/beans" target="_new">Spring Context Beans</a> </li>
+        <li><a href="/autoconfig" target="_new">auto-configuration</a> </li>
+        <li><a href="/mappings" target="_new">URI request mappings</a> </li>
+        <li><a href="/trace" target="_new">Displays trace information</a> </li>
+        <li><a href="/dump" target="_new">Performs Thread Dump</a> </li>
     </ul>
 
 </div>
