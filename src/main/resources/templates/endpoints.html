@@ -97,35 +97,109 @@
     </div>
 </div>
 
-<div>
-    <blockquote>
-        <p>
-            Endpoints for REST and ACTUATOR as per below
-        </p>
-        <small>by <cite>Pas Apicella</cite></small>
-    </blockquote>
-</div>
+<div class="container">
+    <!--Row with two columns divided in 1:2 ratio-->
+    <div class="row">
+        <div class="col-xs-8">
+            <div>
+                <p>
+                    VCAP_SERVICES, VCAP_APPLICATION will only be valid within Cloud Foundry
+                </p>
+                <small>by <cite>Pas Apicella</cite></small>
+                <p />
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">JVM PROPERTIES</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table table-hover table-bordered table-striped table-condensed">
+                                    <div th:each="item : ${propertyMap}">
+                                        <tr>
+                                            <td><span th:text="${item.key}" /></td>
+                                            <td><span th:text="${item.value}" /></td>
+                                        </tr>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">VCAP_SERVICES</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table table-hover table-bordered table-striped table-condensed">
+                                    <div th:each="item : ${vcapServices}">
+                                        <tr>
+                                            <td><span th:text="${item.key}" /></td>
+                                            <td><span th:text="${item.value}" /></td>
+                                        </tr>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">VCAP_APPLICATION</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table table-hover table-bordered table-striped table-condensed">
+                                    <div th:each="item : ${vcapApplication}">
+                                        <tr>
+                                            <td><span th:text="${item.key}" /></td>
+                                            <td><span th:text="${item.value}" /></td>
+                                        </tr>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Note:</strong> Click on the linked heading text to expand or collapse</p>
+        </div>
+        <div class="col-xs-4">
+            <div>
+                <p>
+                    Endpoints for REST and ACTUATOR as per below
+                </p>
+                <small>by <cite>Pas Apicella</cite></small>
+            </div>
 
-<div>
-    <h4> REST </h4>
-    <ul>
-        <li><a href="/emps" target="_new">View All Employees</a> </li>
-        <li><a href="/emp/1" target="_new">View Employee with ID 2 </a> </li>
-        <li><a href="/empwithjob/CLERK" target="_new">View Employees with JOB = CLERK</a> </li>
-    </ul>
+            <div>
+                <h4> REST </h4>
+                <ul>
+                    <li><a href="/emps" target="_new">View All Employees</a> </li>
+                    <li><a href="/emp/1" target="_new">View Employee with ID 2 </a> </li>
+                    <li><a href="/empwithjob/CLERK" target="_new">View Employees with JOB = CLERK</a> </li>
+                </ul>
 
-    <h4> ACTUATOR </h4>
+                <h4> ACTUATOR </h4>
 
-    <ul>
-        <li><a href="/env" target="_new">Environment for shell/JVM</a> </li>
-        <li><a href="/beans" target="_new">Spring Context Beans</a> </li>
-        <li><a href="/autoconfig" target="_new">auto-configuration</a> </li>
-        <li><a href="/mappings" target="_new">URI request mappings</a> </li>
-        <li><a href="/trace" target="_new">Displays trace information</a> </li>
-        <li><a href="/dump" target="_new">Performs Thread Dump</a> </li>
-        <li><a href="/metrics" target="_new">Display Metrics</a> </li>
-    </ul>
+                <ul>
+                    <li><a href="/env" target="_new">Environment for shell/JVM</a> </li>
+                    <li><a href="/beans" target="_new">Spring Context Beans</a> </li>
+                    <li><a href="/autoconfig" target="_new">auto-configuration</a> </li>
+                    <li><a href="/mappings" target="_new">URI request mappings</a> </li>
+                    <li><a href="/trace" target="_new">Displays trace information</a> </li>
+                    <li><a href="/dump" target="_new">Performs Thread Dump</a> </li>
+                    <li><a href="/metrics" target="_new">Display Metrics</a> </li>
+                </ul>
 
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="clearfix">

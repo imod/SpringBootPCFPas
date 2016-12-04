@@ -1,6 +1,6 @@
 ---
 applications:
-- name: springboot-jpa-bootstrap-employee
+- name: pas-springboot-pcf
   memory: 512M
   instances: 1
   random-route: true

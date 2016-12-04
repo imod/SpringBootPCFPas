@@ -3,6 +3,8 @@ package pivotal.au.apples.demo.util;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
@@ -37,7 +39,7 @@ public class Utils
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    private static Map getEnvMap(String vcap) throws Exception {
+    public static Map getEnvMap(String vcap) throws Exception {
         String vcapEnv = System.getenv(vcap);
         ObjectMapper mapper = new ObjectMapper();
 
@@ -47,6 +49,14 @@ public class Utils
         }
 
         return new HashMap<String, String>();
+    }
+
+    public static Map<String, String> jvmPropertyMap ()
+    {
+        Properties props = System.getProperties();
+        Map<String, String> map = new HashMap<String, String>((Map) props);
+
+        return map;
     }
 
     public static String getDBService ()

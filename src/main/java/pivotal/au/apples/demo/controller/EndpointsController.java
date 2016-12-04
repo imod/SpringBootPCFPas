@@ -20,6 +20,10 @@ public class EndpointsController
 
         model.addAttribute("appIndex", Utils.applicationIndex());
         model.addAttribute("dbservice", Utils.getDBService());
+        model.addAttribute("propertyMap", Utils.jvmPropertyMap());
+
+        model.addAttribute("vcapServices", Utils.getEnvMap("VCAP_SERVICES"));
+        model.addAttribute("vcapApplication", Utils.getEnvMap("VCAP_APPLICATION"));
 
         return "endpoints";
     }
