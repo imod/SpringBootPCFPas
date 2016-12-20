@@ -52,5 +52,7 @@ applications:
 
 ![alt tag](https://dl.dropboxusercontent.com/u/15829935/platform-demos/images/spring-pas-pcf-2.png)
 
+![alt tag](https://dl.dropboxusercontent.com/u/15829935/platform-demos/images/spring-pas-pcf-3.png)
+
 <hr />
 Pas Apicella [papicella at pivotal.io] is a Senior Platform Architect at Pivotal Australia 
