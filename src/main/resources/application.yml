@@ -1,3 +1,4 @@
+
 server:
   error:
     whitelabel:
@@ -30,3 +31,6 @@ security:
 management:
   security:
     enabled: false
+  info:
+    git:
+      mode: full

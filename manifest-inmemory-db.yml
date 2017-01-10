@@ -1,6 +1,6 @@
 applications:
 - name: pas-springboot-pcf
-  memory: 512M
+  memory: 1G
   random-route: true
   instances: 1
   timeout: 180
