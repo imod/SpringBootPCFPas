@@ -34,3 +34,8 @@ management:
   info:
     git:
       mode: full
+  cloudfoundry:
+    skip-ssl-validation: true
+  endpoints:
+    actuator:
+      sensitive: false
