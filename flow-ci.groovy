@@ -35,9 +35,6 @@ node() {
 
   sh 'mvn clean install -B -Dmaven.test.failure.ignore'
 
-  step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/*.xml'])
-
-
   // install on CI
   stage name: 'Install CI', concurrency: 1
 
